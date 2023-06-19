@@ -3,7 +3,7 @@ stages:
   - test prod
 
 deploy prod:
-  stage: deploy prod
+  stage: deploy prod && false
   when: manual
   script:
     - echo Deploy ...
