@@ -1,13 +1,10 @@
-# .gitlab-ci.yml
 
-push:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-  script:
-    - echo push
 
-run:
+job:
   rules:
     - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_TAG
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
   script:
     - echo run
