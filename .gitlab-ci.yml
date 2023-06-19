@@ -4,4 +4,6 @@ variables:
   MY_GLOBAL: global
 
 job1:
-  script: env | grep MY
+  script: 
+    - env | grep MY
+    - echo $MY_GROUP_MASKED | base64
