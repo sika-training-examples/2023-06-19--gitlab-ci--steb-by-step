@@ -12,4 +12,4 @@ test2:
 
 test3:
   script: slu chaos-monkey random-status-code
-  retry: 10
+  retry: 2
