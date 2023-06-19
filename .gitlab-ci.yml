@@ -1,10 +1,10 @@
+image: node:16
+
 job:
   cache:
-    key: ${CI_COMMIT_REF_SLUG}
     paths:
-      - now
+      - .yarn-cache
   script:
-    - date >> now
-    - cat now
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
   tags:
-    - linux
+    - docker
