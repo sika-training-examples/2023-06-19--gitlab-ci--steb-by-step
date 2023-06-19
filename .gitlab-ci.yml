@@ -1,8 +1,6 @@
 # .gitlab-ci.yml
 
-job1:
-  script: hostname
-  tags:
-    - linux
-job2:
-  script: hostname
+build:
+  script: echo build
+deploy:
+  script: echo deploy
