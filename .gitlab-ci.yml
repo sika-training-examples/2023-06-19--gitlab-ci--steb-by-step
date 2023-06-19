@@ -1,8 +1,13 @@
 # .gitlab-ci.yml
 
-variables:
-  MY_GLOBAL: global
+push:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+  script:
+    - echo push
 
-job1:
-  script: 
-    - echo $MY_XXX_DDD
+run:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+  script:
+    - echo run
