@@ -1,9 +1,11 @@
 image: node:16
 
+
+variables:
+  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+
+
 job:
-  cache:
-    paths:
-      - .yarn-cache
   script:
     - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
   tags:
