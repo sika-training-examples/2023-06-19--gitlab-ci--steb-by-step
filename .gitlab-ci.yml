@@ -9,4 +9,3 @@ Build Bar:
   rules:
     - changes:
         - bar/**
-#####
