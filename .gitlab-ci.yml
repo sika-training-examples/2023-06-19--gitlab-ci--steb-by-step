@@ -18,7 +18,7 @@ build:
       - GOOS:
           - linux
         GOARCH:
-          - x86
+          - '386'
   artifacts:
     paths:
       - hello-${GOOS}-${GOARCH}
@@ -37,4 +37,4 @@ test:
 test32:
   stage: test
   script:
-    - ./hello-linux-x86
+    - ./hello-linux-386
