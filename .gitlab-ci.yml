@@ -1,13 +1,10 @@
-Build foo:
-  script: echo Build Frontend ...
+workflow:
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
-      changes:
-        - foo/**
+    - if: $CI_COMMIT_TITLE =~ /^WIP:/
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-Build bar:
-  script: echo Build Backend ...
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
-      changes:
-        - bar/*
+
+job:
+  script: echo ...
