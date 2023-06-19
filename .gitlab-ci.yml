@@ -12,8 +12,8 @@ deploy:
     on_stop: foo
 
 foo:
-  variables:
-    GIT_STRATEGY: none
+  # variables:
+  #   GIT_STRATEGY: none
   script: echo Stop!
   when: manual
   environment:
