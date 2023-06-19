@@ -1,12 +1,14 @@
 # .gitlab-ci.yml
 
-image: golang:1.20
-
 stages:
   - build
   - test
 
 build:
+  image:
+    name: golang:1.20
+    entrypoint: [ '/bin/sh', '-c' ]
+
   stage: build
   parallel:
     matrix:
