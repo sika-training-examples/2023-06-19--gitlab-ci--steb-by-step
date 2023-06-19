@@ -1,13 +1,14 @@
-image: sikalabs/dev
+# .gitlab-ci.yml
 
-stages:
-  - foo
-  - bar
+job1:
+  script:
+    - echo deploy!
+    - echo test!
+    - echo cleanup!
 
-foo:
-  stage: foo
-  script: training-cli version
-
-bar:
-  stage: bar
-  script: training-cli --help
+job2:
+  script:
+    - echo deploy!
+    - echo test!
+  after_script:
+    - echo cleanup!
