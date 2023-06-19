@@ -1,12 +1,19 @@
-image: node:16
+# .gitlab-ci.yml
 
+stages:
+  - build
+  - test
 
-variables:
-  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
-
-
-job:
+build:
+  stage: build
   script:
-    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
-  tags:
-    - docker
+    - mkdir -p out
+    - echo '<h1>Hello World!</h1>' > out/index.html
+  artifacts:
+    paths:
+      - out
+
+test:
+  stage: test
+  script:
+    - cat out/index.html
