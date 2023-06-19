@@ -5,10 +5,6 @@ stages:
   - test
 
 build:
-  image:
-    name: golang:1.20
-    entrypoint: [ '/bin/bash', '-c' , '/bin/bash -c $0']
-
   stage: build
   parallel:
     matrix:
@@ -26,8 +22,12 @@ build:
   artifacts:
     paths:
       - hello-${GOOS}-${GOARCH}
+  variables:
+    CGO_ENABLED: '0' 
   script:
     - go build -o hello-${GOOS}-${GOARCH} main.go
+  tags:
+    - linux
 
 test:
   stage: test
