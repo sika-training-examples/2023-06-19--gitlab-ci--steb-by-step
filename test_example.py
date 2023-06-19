@@ -1,5 +1,5 @@
 def test_ok():
-    assert Flase
+    assert True
 
 def test_err():
     assert False
