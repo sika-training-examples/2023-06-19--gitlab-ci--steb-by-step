@@ -7,12 +7,4 @@ stages:
 build:
   stage: build
   script: echo Run build ...
-
-test:
-  stage: test
-  script: echo Run test ...
-
-deploy:
-  stage: test
-  script: echo Run deploy ...
-  when: manual
+  allow_failure: true
