@@ -1,5 +1,4 @@
-before_script:
-  - curl -fsSL https://raw.githubusercontent.com/ondrejsika/training-cli/master/install.sh | sh
+image: sikalabs/dev
 
 stages:
   - foo
