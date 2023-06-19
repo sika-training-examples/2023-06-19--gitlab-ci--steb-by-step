@@ -1,13 +1,13 @@
 # .gitlab-ci.yml
 
-Build Frontend:
-  script: echo Build Frontend ...
+Build Foo:
+  script: cd foo && echo docker build .... && cat Dockerfile
   rules:
     - changes:
-        - frontend.txt
+        - foo/**
 
-Build Backend:
-  script: echo Build Backend ...
+Build Bar:
+  script: cd foo && echo docker build .... && cat Dockerfile
   rules:
     - changes:
-        - backend.txt
+        - bar/**
