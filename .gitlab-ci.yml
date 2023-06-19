@@ -14,11 +14,11 @@ build:
     - docker build -t $IMAGE .
     - docker push $IMAGE
   tags:
-    - linux
+    - docker
 
 test:
   stage:  test
   script:
     - docker run $IMAGE
   tags:
-    - linux
+    - docker
