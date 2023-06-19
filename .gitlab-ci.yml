@@ -1,0 +1,5 @@
+example job:
+  script: echo Hello World!
+
+foo:
+  script: echo foo foo foo
