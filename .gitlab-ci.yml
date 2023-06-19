@@ -5,5 +5,4 @@ variables:
 
 job1:
   script: 
-    - env | grep MY
-    - echo $MY_GROUP_MASKED | base64
+    - echo $MY_XXX_DDD
