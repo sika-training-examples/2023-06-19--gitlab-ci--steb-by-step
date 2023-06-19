@@ -7,4 +7,4 @@ job:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: manual
   script:
-    - echo run
+    - echo run ....
