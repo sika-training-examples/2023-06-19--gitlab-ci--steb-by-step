@@ -1,6 +1,15 @@
-# .gitlab-ci.yml
+stages:
+  - build
+  - test
 
 build:
-  script: echo build
-deploy:
-  script: echo deploy
+  stage: build
+  script: echo Build!
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2!
