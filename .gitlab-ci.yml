@@ -6,10 +6,10 @@ build:
   stage: build
   script: sleep 10 && echo Build!
 
-test1:
+foo:
   stage: test
   script: echo Test1!
 
-test2:
+bar:
   stage: test
   script: echo Test2!
