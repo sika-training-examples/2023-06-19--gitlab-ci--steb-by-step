@@ -1,4 +1,4 @@
-global_before:
+before_script:
   - curl -fsSL https://raw.githubusercontent.com/ondrejsika/training-cli/master/install.sh | sh
 
 stages:
