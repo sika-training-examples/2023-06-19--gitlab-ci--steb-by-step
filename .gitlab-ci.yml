@@ -4,6 +4,6 @@ job:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: never
-    - if: 'true'
+    - if: '"true"'
   script:
     - echo run ....
