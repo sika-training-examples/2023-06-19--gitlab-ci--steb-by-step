@@ -3,6 +3,7 @@ test:
   image: ondrejsika/pytest
   script:
     - pytest --junitxml=report.xml
+    - cat report.xml
   artifacts:
     reports:
       junit: report.xml
