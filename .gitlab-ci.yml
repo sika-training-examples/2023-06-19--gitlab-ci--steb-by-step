@@ -1,11 +1,4 @@
-workflow:
-  rules:
-    - if: $CI_COMMIT_TITLE =~ /^WIP:/
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: manual
-
-
 job:
-  script: echo ...
+  script:
+    - date >> now
+    - cat now
