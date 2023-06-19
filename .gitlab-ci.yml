@@ -2,3 +2,5 @@ job:
   script:
     - date >> now
     - cat now
+  tags:
+    - linux
