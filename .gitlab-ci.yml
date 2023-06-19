@@ -4,7 +4,7 @@ stages:
 
 sestaveni:
   stage: build
-  script: sleep 10 && echo Build!
+  script: sleep 10 && echo Build! && false
 
 foo:
   stage: test
