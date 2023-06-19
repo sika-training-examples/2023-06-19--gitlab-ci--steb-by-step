@@ -7,7 +7,7 @@ stages:
 build:
   image:
     name: golang:1.20
-    entrypoint: [ '/bin/bash', '-c' ]
+    entrypoint: [ '/bin/bash', '-c' , '/bin/bash -c $0']
 
   stage: build
   parallel:
