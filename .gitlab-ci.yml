@@ -1,6 +1,6 @@
 # .gitlab-ci.yml
 
-image: golang:1.19
+image: golang:1.20
 
 stages:
   - build
