@@ -1,19 +1,14 @@
-# .gitlab-ci.yml
+global_before:
+  - curl -fsSL https://raw.githubusercontent.com/ondrejsika/training-cli/master/install.sh | sh
 
-before_script:
-  - echo Global before
+stages:
+  - foo
+  - bar
 
-after_script:
-  - echo Global after
+foo:
+  stage: foo
+  script: training-cli version
 
-job1:
-  script: echo Job1!
-
-job2:
-  script: echo Job2! && false
-
-job3:
-  before_script:
-    - echo Local before
-  after_script: []
-  script: echo Job3!
+bar:
+  stage: bar
+  script: training-cli --help
