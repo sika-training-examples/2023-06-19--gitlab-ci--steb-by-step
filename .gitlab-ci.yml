@@ -1,8 +1,8 @@
 # .gitlab-ci.yml
 
 job1:
-  script: echo Hello World!
+  script: hostname
+  tags:
+    - linux
 job2:
-  script:
-    - echo Hello World!
-    - echo Ahoj Svete!
+  script: hostname
