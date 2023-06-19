@@ -1,24 +1,16 @@
-stages:
-  - build
-  - test
-
 variables:
-  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+  IMAGE: $CI_REGISTRY_IMAGE/kaniko:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+  GIT_CLEAN_FLAGS: -ffdx -e .kaniko-cache
 
-before_script:
-  - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
-
-build:
-  stage:  build
+job:
+  image:
+    name: gcr.io/kaniko-project/executor:v1.11.0-debug
+    entrypoint: [""]
   script:
-    - docker build -t $IMAGE .
-    - docker push $IMAGE
-  tags:
-    - docker
-
-test:
-  stage:  test
-  script:
-    - docker run $IMAGE
-  tags:
-    - docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context .
+      --dockerfile ./Dockerfile
+      --destination $IMAGE
+      --cache=true
+      --cache-dir .kaniko-cache
